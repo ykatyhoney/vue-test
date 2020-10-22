@@ -10,7 +10,7 @@ Go to client folder
 cd ./client 
 npm install
 ```
-Build server
+Build Client
 ```
 npm run build
 ```
