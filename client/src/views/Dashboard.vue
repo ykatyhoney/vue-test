@@ -21,6 +21,7 @@ export default {
     fetch(SECRET_URL, {
       headers: {
         Authorization: `Bearer ${localStorage.token}`,
+        "content-type": "application/json",
       },
       cache: "no-store",
       // maybe there is a way to stop ajax if cached
