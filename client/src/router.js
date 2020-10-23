@@ -40,12 +40,12 @@ export default new Router({
       path: '/',
       redirect: '/signin'
     },
-    {
-      path: '/signup',
-      name: 'signup',
-      component: Signup,
-      beforeEnter: loggedInRedirectDashboard,
-    },
+    // {
+    //   path: '/signup',
+    //   name: 'signup',
+    //   component: Signup,
+    //   beforeEnter: loggedInRedirectDashboard,
+    // },
     {
       path: '/signin',
       name: 'signin',

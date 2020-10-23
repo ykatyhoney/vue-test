@@ -8,12 +8,12 @@ const authController = require('../controllers/auth');
 const passportSignIn = passport.authenticate('local', { session: false });
 const passportJWT = passport.authenticate('jwt', { session: false });
 
-router.route('/signup')
-  // sign up with email
-  .post(
-    validateBody(schemas.signUpSchema),
-    authController.signUp
-  );
+// router.route('/signup')
+//   // sign up with email
+//   .post(
+//     validateBody(schemas.signUpSchema),
+//     authController.signUp
+//   );
 
 router.route('/signin')
   // signin with email

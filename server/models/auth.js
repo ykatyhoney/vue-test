@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const { ROLES, MEMBER } = require('../configuration/roles')
 // Create a schema
 const userSchema = new Schema({
   method: {
@@ -18,6 +18,12 @@ const userSchema = new Schema({
       type: String
     }
   },
+  role: {
+    type: String,
+    required: true,
+    default: MEMBER,
+    enum: ROLES
+  }
 });
 
 // Create a model

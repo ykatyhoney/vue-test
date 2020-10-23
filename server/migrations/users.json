@@ -1,0 +1,19 @@
+[
+    {
+        "method": "local",
+        "local": {
+            "password": "password",
+            "email": "user3@test.com"
+        },
+        "name": "user3"
+    },
+    {
+        "method": "local",
+        "local": {
+            "password": "password",
+            "email": "user4@test.com"
+        },
+        "name": "user4",
+        "role": "Auditor"
+    }
+]

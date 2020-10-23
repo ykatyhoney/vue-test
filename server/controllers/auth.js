@@ -53,7 +53,7 @@ module.exports = {
   },
 
   secret: async (req, res, next) => {
-    console.log("name",req.user.name)
-    res.json({ secret: req.user.name });
+    console.log("name", req.user.name)
+    res.json({ secret: req.user.name, role: req.user.role });
   }
 }
