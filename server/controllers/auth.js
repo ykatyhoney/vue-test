@@ -49,7 +49,7 @@ module.exports = {
     // Generate a token and respond with it
     console.log(req.user)
     const token = signToken(req.user);
-    res.status(200).json({ token, userId: req.user._id });
+    res.status(200).json({ token, userId: req.user._id, name: req.user.name, role: req.user.role });
   },
 
   secret: async (req, res, next) => {

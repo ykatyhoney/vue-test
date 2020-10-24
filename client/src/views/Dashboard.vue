@@ -10,7 +10,8 @@
 </template>
 
 <script>
-const { API_URL } = require("../constants.js");
+import { authenticationService } from "../_services/authentication.service";
+const { API_URL } = require("../_helpers/constants.js");
 const SECRET_URL = API_URL + "/secret";
 
 export default {
@@ -20,7 +21,7 @@ export default {
     }
     fetch(SECRET_URL, {
       headers: {
-        Authorization: `Bearer ${localStorage.token}`,
+        Authorization: `Bearer ${authenticationService.currentUserValue.token}`,
         "content-type": "application/json",
       },
       cache: "no-store",
@@ -50,8 +51,7 @@ export default {
   }),
   methods: {
     logout() {
-      localStorage.removeItem("token");
-      localStorage.removeItem("userId");
+      authenticationService.logout();
       this.$router.push("/signin");
     },
   },

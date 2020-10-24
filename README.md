@@ -5,6 +5,7 @@
 Please confirm if mongodb runs on 27017
 
 ### Install client
+
 Go to client folder 
 ```
 cd ./client 
@@ -38,4 +39,25 @@ If all works fine,
 listening on 3000...
 Database is connnedted
 ```
+
+### Migrate test users data to database (MongoDB)
+Go to server folder
+
+To Migrate to database, run
+```
+npm run migrate
+```
+To remove test user data, run
+```
+npm run migrate-down add_users
+```
+Here, `add_users` is migration script.
+
+Test user data:
+`server/migrations/users.json`
+  - Memeber
+    email: user3@test.com, password: password
+  - Auditor
+    email: user4@test.com, password: password
+
 Please enjoy

@@ -51,10 +51,9 @@
 </template>
 
 <script>
-import Joi from "joi";
 import Vue from "vue";
-const { API_URL } = require("../constants.js");
-const SIGNIN_URL = API_URL + "/signin";
+import Joi from "joi";
+import { authenticationService } from "../_services/authentication.service";
 
 const schema = Joi.object().keys({
   email: Joi.string().email().required(),
@@ -89,26 +88,11 @@ export default {
           password: this.user.password,
         };
 
-        fetch(SIGNIN_URL, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(body),
-        })
-          .then((response) => {
-            if (response.ok) {
-              return response.json();
-            }
-            return response.json().then((error) => {
-              throw new Error(error.message);
-            });
-          })
+        authenticationService
+          .login(body)
           .then((result) => {
-            localStorage.token = result.token;
-            localStorage.userId = result.userId;
             this.loggingIn = false;
-            this.$router.push(`/${result.userId}/dashboard`);
+            this.$router.push('/dashboard');
           })
           .catch((error) => {
             this.loggingIn = false;

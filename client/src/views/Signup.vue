@@ -71,7 +71,7 @@
 
 <script>
 import Joi from "joi";
-const { API_URL } = require("../constants.js");
+const { API_URL } = require("../_helpers/constants.js");
 const SIGNUP_URL = API_URL + "/signup";
 
 export default {
