@@ -38,11 +38,11 @@
             </div>
             <button type="submit" class="btn btn-primary">Signin</button>
           </form>
-          <br />
+          <!-- <br />
           <div>
             Don’t have an account?
             <router-link to="/signup">Sign up</router-link>
-          </div>
+          </div> -->
         </div>
         <div class="col-lg=3 col-md-2 col-sm-1 col-xs-12"></div>
       </div>
