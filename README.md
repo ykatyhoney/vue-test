@@ -45,13 +45,13 @@ Go to server folder
 
 To Migrate to database, run
 ```
-npm run migrate
+npm run migrate add_users
 ```
 To remove test user data, run
 ```
 npm run migrate-down add_users
 ```
-Here, `add_users` is migration script.
+Here, `add_users` is migration schema.
 
 Test user data:
 `server/migrations/users.json`
