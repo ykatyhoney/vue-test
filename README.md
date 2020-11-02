@@ -30,6 +30,7 @@ Copy .env.example file to .env
 ```
 cp .env.example .env
 ```
+On `.env` file, set `MONGODB_URL`, `MIGRATE_dbConnectionUri`, `JWT_STRATEGY_SECRET`.
 Run server
 ```
 npm run start or npm run dev
